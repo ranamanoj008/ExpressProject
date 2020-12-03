@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Piazzolla:ital,wght@0,300;0,900;1,200&display=swap');
+
+*{
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Piazzolla', serif;
+
+}
+
+.row{
+    margin: 0;
+}
+
+:root{
+    --main-bg : #1e272e;
+    --main-color : #0097e6;
+}
+
+html{
+    font-size: 62.5%;
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.main_div{
+    background-color: var(--main-bg);
+}
+
+.navbar{
+    color: white;
+    background-color: var(--main-bg);
+    padding: 2rem 0;
+}
+
+.navbar li {
+    margin-left: 2rem;
+}
+
+.nav-link{
+    color : white;
+    font-size: 1.5rem;
+}
+
+.navbar-brand{
+    font-size: 2.3rem;
+}
+
+
+/* body */
+
+.main_body_left{
+    height: 52rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.main_body_left p{
+    font-size: 2rem;
+}
+
+.main_body_left h1{
+    font-size: 4rem;
+    margin: 1rem 0 4rem;
+    text-transform: capitalize;
+}
+
+.span_tag{
+    color: var(--main-color);
+    font-weight: 500;
+}
+
+.main_body_left button{
+    border: none;
+    padding: 0.8rem 1.8rem;
+    font-size: 1.4rem;
+    border-radius: 2rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 6px -6px black;
+    outline: none;
+    align-items: center;
+}
+
+.main_body_left button:hover{
+    background-color: var(--main-color);
+    color: white;
+}
+
+.main_body_right{
+    height: 52rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* weather */
+
+.temp_form{
+    width: 50%;
+    margin: 3rem auto 2rem;
+    position: relative;
+}
+
+.temp_form input[type="text"]{
+    width: 100%;
+    background-color:var(--main-bg);
+    padding: 1rem 4rem 1rem 1rem;
+    color: white;
+    font-size: 1.3rem;
+    border-radius: 3rem;
+    outline: none;
+    border: none;
+}
+
+.temp_form input[type="submit"]{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    border-radius: 3rem;
+    padding: 0 2rem;
+    font-size: 1.3rem;
+    border: none;
+    color: white;
+    background-color: var(--main-color);
+    outline: none;
+}
+
+.temp_form input[type="submit"]:hover{
+    color: var(--main-color);
+    background-color: white;
+}
+
+.temp_info{
+    width: 40rem;
+    margin: auto;
+    min-height: 20rem;
+    background-color: #1e272e;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.top_layer{
+    width: 100%;
+    height: 20%;
+    background-color: rgb(77, 77, 77);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 1rem;
+    /* padding: 2rem; */
+}
+
+.top_layer p{
+    color: white;
+    font-weight: 300;
+    font-size: 1.3rem;
+    padding: 2rem;
+}
+
+.middle_layer{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(36, 36, 36);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+#temp_status{
+    color: var(--main-color);
+}
+
+.middle_layer #city_name{
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.bottom_layer {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    
+}
+
+.bottom_layer p{
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+/* footer */
+
+footer{
+    width: 100%;
+    background-color: var(--main-bg);
+    margin-top: auto;
+}
+
+footer p{
+    margin: 0;
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* responsive code  */
+
+@media(max-width : 768px){
+    .main_body_left{
+        height: auto;
+        margin: 5rem 0;
+    }
+    .main_body_right{
+        height: auto;
+        margin: 3rem 0;
+    }
+    .temp_info{
+        width: 50%;
+        font-size: 1rem;
+    }
+    .bottom_layer p{
+        font-size: 3rem;
+        
+    }
+    .top_layer p{
+        padding: 5px;
+    }
+
+}
+
+/* error */
+
+.err_img{
+    width: 40rem;
+    height: 40rem;
+}

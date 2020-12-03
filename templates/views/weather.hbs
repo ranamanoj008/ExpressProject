@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headerlinks}}
+</head>
+<body>
+        {{>navbar}}
+       
+        <div class="container-fluid main_header">
+            <div class="row">
+                <div class="col-md-10 col-12 mx-auto">
+                    <div class="main_content">
+                        <form class="temp_form">
+                            <input type="text" id="cityName"  placeholder="enter your city name" autocomplete="off">
+                        <input type="submit" id="submit_btn" value="srch"> 
+                        </form>
+                        </div>
+                            <div class="temp_info">
+                                <div class="top_layer">
+                                    <p id="day">day</p>
+                                    <p id="date">Dec 3</p>
+                                </div>
+                                <div class="middle_layer">
+                                    <p id="city_name">city</p>
+                                        <div class="bottom_layer data_hide">
+                                            <p id="temp"><span id="temp_vall">0</span> <sup>o</sup>C</p>
+                                            <p id="temp_status">Status</p>
+                                        </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+        </div>
+        {{>footer}}
+
+    <script src="js/main.js"> </script>
+
+    <script>
+
+   
+        const currDay = ()=>{
+            let weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednessday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+    let Month = new Array(12);
+        Month[0] = "January";
+        Month[1] = "Feburary";
+        Month[2] = "March";
+        Month[3] = "April";
+        Month[4] = "May";
+        Month[5] = "June";
+        Month[6] = "July";
+        Month[7] = 'August';
+        Month[8] = "September";
+        Month[9] = "October";
+        Month[10] = "November";
+        Month[11] = "December";
+
+            const date = new Date();
+            let Day = weekday[date.getDay()];
+            let day = document.getElementById('day')
+            day.innerText = Day;
+            
+            let Months = Month[date.getMonth()]
+            let currDate = date.getDay();
+            let dates = document.getElementById('date')
+            dates.innerHTML = `${Months}     ${currDate}`;
+        }
+        currDay();
+    </script>
+</body>
+</html>

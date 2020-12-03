@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>headerlinks}}
+</head>
+<body>
+    <!-- navbar -->
+        {{>navbar}}
+        <!-- body -->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 col-12  main_body mx-auto">
+                        <div class="row">
+                           <div class="col-md-12 col-12 main_body_left align-items-center">
+                            <figure class="err_img">
+                              <img src="./images/img5.jpg" alt="image" class="img-fluid" title="k">
+                                <p class="text-center mt-1">Welcome to ExpressJS</p>
+                                <h1>{{errorProp}}</h1>
+
+                            </figure>
+                                <a href="/"><button>Go Back</button></a>
+                              </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+             
+            <!-- footer -->
+            {{>footer}}
+</body>
+</html>
