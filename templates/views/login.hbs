@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ {{>headerlinks}}
+</head>
+<body>
+        {{>navbar}}
+    <div class="log_div">
+        <div class="center_div">
+            <div class="left_div">
+                <div class="content">
+                    <img src="images/logimg.png" alt="img">
+                    <h1>Sign Up Form</h1>
+                    <button class="sign_btn" onclick="sign()">SignUp</button>
+                    <button class="log_btn" onclick="log()">Login</button>
+                </div>
+            </div>
+            <div class="right_div">
+                <div class="login_content">
+                    <form action="/login" method="POST">
+                        <h1>Login Form</h1>
+                        <input type="text" name="email" placeholder="email">
+                        <br><br>
+                        <input type="password" name="password" placeholder="enter password">
+                        <br><br>
+                        <button type="submit" value="login">Login</button>
+                    </form>
+                </div>
+                <div class="signup_content">
+                    <form action="/register" method="POST">
+                        <h1>SignUp Form</h1>
+                        <input type="text" name="username" placeholder="username">
+                        <br><br>
+                        <input type="text" name="email" placeholder="enter email">
+                        <br><br>
+                        <input type="password" name="password" placeholder="enter password">
+                        <br><br>
+                        <button type="submit" value="register">SignUp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function sign(){
+            document.querySelector('.login_content').style.cssText="display:none;";
+            document.querySelector('.signup_content').style.cssText="display:block;";
+            document.querySelector('.log_btn').style.cssText="display:block;";
+            document.querySelector('.sign_btn').style.cssText="display:none;";
+        }
+
+        function log(){
+            document.querySelector('.signup_content').style.cssText="display:none;";
+            document.querySelector('.login_content').style.cssText="display:block;";
+            document.querySelector('.sign_btn').style.cssText="display:block; margin-left:3rem";
+            document.querySelector('.log_btn').style.cssText="display:none;";
+        }
+    </script>
+
+    {{>footer}}
+</body>
+</html>
