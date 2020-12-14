@@ -1,13 +1,14 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 8000 ;
-const path = require('path') 
-const hbs = require('hbs')
-require('./db/connection')
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const port = process.env.PORT;
+const path = require('path'); 
+const hbs = require('hbs');
+require('./db/connection');
 const Registration = require('./models/Registration');
-const bcrypt = require('bcryptjs')
-const cookieParser = require('cookie-parser')
-const auth = require('./midelware/auth')
+const bcrypt = require('bcryptjs');
+const cookieParser = require('cookie-parser');
+const auth = require('./midelware/auth');
 
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
@@ -18,8 +19,9 @@ app.set('views', viewsPath)
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
 app.use(cookieParser())
-
 app.use(express.static(path.join(__dirname, '../public')))
+
+console.log(process.env.SECRET_KEY)
 
 app.get('/' , (req,res)=>{
     res.render('index.hbs')
@@ -46,7 +48,7 @@ app.post('/register', async(req,res)=>{
             username : req.body.username,
             email : req.body.email,
             password : req.body.password
-        })
+        }) 
 
         const token = await data.genAuthToken();
         
@@ -63,7 +65,7 @@ app.post('/register', async(req,res)=>{
 // login 
 app.get('/login', (req,res)=>{
     res.render('login')
-})
+})  
 
 app.get('/logout', auth, async(req,res)=>{
     try{
@@ -95,6 +97,7 @@ app.post('/login', async(req,res)=>{
         res.send('invalid user')
     }
 })
+
 
 // form ends
 

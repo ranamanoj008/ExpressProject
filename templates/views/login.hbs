@@ -27,13 +27,13 @@
                     </form>
                 </div>
                 <div class="signup_content">
-                    <form action="/register" method="POST">
+                    <form action="/register" method="POST" id="sign_form">
                         <h1>SignUp Form</h1>
-                        <input type="text" name="username" placeholder="username">
+                        <input class="element" type="text" id="username" name="username" placeholder="username">
                         <br><br>
-                        <input type="text" name="email" placeholder="enter email">
+                        <input type="text" class="element" id="email" name="email" placeholder="enter email">
                         <br><br>
-                        <input type="password" name="password" placeholder="enter password">
+                        <input type="password" class="element" id="password" name="password" placeholder="enter password">
                         <br><br>
                         <button type="submit" value="register">SignUp</button>
                     </form>
@@ -58,5 +58,6 @@
     </script>
 
     {{>footer}}
+
 </body>
 </html>
